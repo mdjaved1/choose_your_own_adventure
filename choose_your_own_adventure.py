@@ -2,21 +2,6 @@ import random
 
 random_number = random.randint(0, 11)
 
-
-def start_adventure():
-    name = input("Type in your name: ")
-    print("Welcome", name, "to this adventure!")
-
-    while True:
-        answer = input("You are on a dirt road that is scary on the left and nice on the right, it has come to an end and you can either turn left or right: ").lower()
-
-        if answer == "left":
-            return encounter_river()
-        elif answer == "right":
-            return encounter_horse()
-        else:
-            print("Not a valid option.")
-
 def encounter_river():
     while True:
         answer = input("You come to a river, you can walk around it or swim across? Type 'walk' to walk around and 'swim' to swim across: ").lower()
@@ -52,6 +37,21 @@ def encounter_stranger():
         elif answer == "no":
             print("The stranger kills you. You lose.")
             return False
+        else:
+            print("Not a valid option.")
+
+
+def start_adventure():
+    name = input("Type in your name: ")
+    print("Welcome", name, "to this adventure!")
+
+    while True:
+        answer = input("You are on a dirt road that is scary on the left and nice on the right, it has come to an end and you can either turn left or right: ").lower()
+
+        if answer == "left":
+            return encounter_river()
+        elif answer == "right":
+            return encounter_horse()
         else:
             print("Not a valid option.")
 
